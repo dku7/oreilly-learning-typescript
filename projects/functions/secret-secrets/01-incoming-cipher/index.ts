@@ -1,2 +1,15 @@
-// Write your createCipher function here! ✨
-// You'll need to export it so the tests can run it.
+type CipherCallback = (letter: string) => string;
+
+export function createCipher(cipher: CipherCallback) {
+	const fn = (text: string) => {
+		let str = "";
+
+		for (const letter of text) {
+			str += cipher(letter);
+		}
+
+		return str;
+	};
+
+	return fn;
+}
