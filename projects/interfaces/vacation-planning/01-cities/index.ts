@@ -13,8 +13,8 @@ interface City {
 
 const padNum = (num: number) => String(num).padStart(2, "0");
 
-const formatCoord = ([x, y, z]: Coordinate) =>
-	`${padNum(x)}°${padNum(y)}'${padNum(z)}"`;
+const formatCoord = ([deg, min, sec]: Coordinate) =>
+	`${padNum(deg)}°${padNum(min)}'${padNum(sec)}"`;
 
 const formatCoords = (coords: Coordinates) =>
 	`\n* Located at ${formatCoord(coords.north)}N ${formatCoord(coords.west)}W`;
