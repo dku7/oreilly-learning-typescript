@@ -2,50 +2,43 @@ interface BaseLandmark {
 	name: string;
 }
 
-interface FortLandmark extends BaseLandmark {
+interface Fort extends BaseLandmark {
 	type: "fort";
 }
 
-interface MountainLandmark extends BaseLandmark {
+interface Mountain extends BaseLandmark {
 	height: number;
 	type: "mountain";
 }
 
-interface ParkLandmark extends BaseLandmark {
+interface Park extends BaseLandmark {
 	acres: number;
 	type: "park";
 }
 
-interface LighthouseLandmark extends BaseLandmark {
+interface Lighthouse extends BaseLandmark {
 	height: number;
 	lit: number;
 	type: "lighthouse";
 }
 
-interface LakeLandmark extends BaseLandmark {
+interface Lake extends BaseLandmark {
 	miles: number;
 	type: "lake";
 }
 
-interface WaterfallLandmark extends BaseLandmark {
+interface Waterfall extends BaseLandmark {
 	height: number;
 	type: "waterfall";
 }
 
-interface RiverLandmark extends BaseLandmark {
+interface River extends BaseLandmark {
 	depth: number;
 	length: number;
 	type: "river";
 }
 
-type Landmark =
-	| FortLandmark
-	| MountainLandmark
-	| ParkLandmark
-	| LighthouseLandmark
-	| LakeLandmark
-	| WaterfallLandmark
-	| RiverLandmark;
+type Landmark = Fort | Mountain | Park | Lighthouse | Lake | Waterfall | River;
 
 const formatCommon = (landmark: Landmark) =>
 	`${landmark.name} is a ${landmark.type} in Upstate New York.`;
