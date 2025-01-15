@@ -21,3 +21,9 @@ const artifacts = {
 		type: "sword",
 	},
 };
+
+export type ArtifactName = keyof typeof artifacts;
+
+export function getArtifactType(artifactName: ArtifactName) {
+	return artifacts[artifactName].type;
+}
