@@ -1,35 +1,25 @@
-// Refactor here! ✨
+const favouriteAnimals = [
+	"parakeet",
+	"macaw",
+	"cat",
+	"monkey",
+	"elephant",
+	"alpaca",
+	"fox",
+];
 
 export function checkIsAnyAnimalFavorite(...animals: string[]) {
-	const favoriteAnimalsUnique = new Set([
-		"parakeet",
-		"macaw",
-		"cat",
-		"monkey",
-		"elephant",
-		"alpaca",
-		"fox",
-	]);
-
-	return animals.some((animal) => favoriteAnimalsUnique.has(animal));
+	return animals.some((animal) => new Set(favouriteAnimals).has(animal));
 }
 
 export function getFavoriteAnimals(max = Infinity) {
-	return [
-		"parakeet",
-		"macaw",
-		"cat",
-		"monkey",
-		"elephant",
-		"alpaca",
-		"fox",
-	].slice(0, max);
+	const animals = Array.from(favouriteAnimals);
+
+	return animals.slice(0, max);
 }
 
 export function logFavoriteAnimals() {
-	["parakeet", "macaw", "cat", "monkey", "elephant", "alpaca", "fox"].forEach(
-		(animal, i) => {
-			console.log(`I like ${animal} number ${i}!`);
-		}
-	);
+	favouriteAnimals.forEach((animal, i) => {
+		console.log(`I like ${animal} number ${i}!`);
+	});
 }
